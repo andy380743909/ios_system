@@ -5,7 +5,7 @@ _ = Package(
     name: "xcfs",
     platforms: [.macOS("11")],
     dependencies: [
-        .package(url: "https://github.com/yury/FMake", from: "0.0.16")
+        .package(url: "https://github.com/andy380743909/FMake", .branch("main"))
     ],
     
     targets: [
