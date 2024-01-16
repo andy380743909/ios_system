@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 #include "ios_system.h"
 
@@ -3742,4 +3743,13 @@ void ios_releasePythonLibraryName(char* name) {
             PythonIsRunning[libNumber] = false;
     }
     free(name);
+}
+
+const char* ios_tmpname(void) {
+    NSURL *temporaryDirectory = [[NSFileManager defaultManager] temporaryDirectory];
+    NSString *uniqueFileName = [NSUUID UUID].UUIDString;
+    NSURL *temporaryFileURL = [temporaryDirectory URLByAppendingPathComponent:uniqueFileName];
+    NSString *path = temporaryFileURL.path;
+    const char *result = path.UTF8String;
+    return result;
 }

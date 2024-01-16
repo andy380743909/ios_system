@@ -116,6 +116,8 @@ extern const char* ios_expandtilde(const char *login);
 extern void ios_activateChildStreams(FILE** old_stdin, FILE** old_stdout,  FILE ** old_stderr);
 extern const char* ios_getBookmarkedVersion(const char* p);
 
+extern const char* ios_tmpname(void);
+
 #ifdef __cplusplus
 }
 #endif
